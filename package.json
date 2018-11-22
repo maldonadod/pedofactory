@@ -1,0 +1,11 @@
+{
+  "name": "factory_base_on_lambda",
+  "version": "1.0.0",
+  "description": "factory_base_on_lambda",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
