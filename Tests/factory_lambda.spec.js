@@ -3,18 +3,7 @@ const DefaultTerminator = require('../src/DefaultTerminator')
 const FactoryBaseOnLambda = require('../src/FactoryBaseOnLambda')
 const T1000 = require('../src/T1000')
 const T2000 = require('../src/T2000')
-
-class IBaseOnLambdaArgs {
-    constructor(value) {
-        this.value = value
-    }
-    test(n) {
-        return this.value === n
-    }
-}
-
-class Find extends IBaseOnLambdaArgs {
-}
+const Find = require('../src/FinderArgs')
 
 describe('FactoryBaseOnLambda', () => {
     
