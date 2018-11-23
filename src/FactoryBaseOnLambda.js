@@ -11,10 +11,10 @@ class FactoryBaseOnLambda {
         }]
     }
     create(IBaseOnLambdaArgs) {
-        const element = this.posibilities
+        const posibility = this.posibilities
             .find(({test}) => test(IBaseOnLambdaArgs))
 
-        return element ? element.result : this.defaultClass
+        return posibility ? posibility.result : this.defaultClass
     }
 }
 
