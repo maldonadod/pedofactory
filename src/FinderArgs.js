@@ -1,6 +1,10 @@
-const IBaseOnLambdaArgs = require('./IBaseOnLambdaArgs')
-
-class FindArgs extends IBaseOnLambdaArgs {
+class FindTestEqualsArgs {
+    constructor(value) {
+        this.value = value
+    }
+    test(n) {
+        return this.value === n
+    }
 }
 
-module.exports = FindArgs
+module.exports = FindTestEqualsArgs
