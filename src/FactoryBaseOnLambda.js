@@ -2,16 +2,16 @@ class FactoryBaseOnLambda {
 
     constructor(defaultClass) {
         this.defaultClass = defaultClass
-        this.collection = []
+        this.posibilities = []
     }
     map(test, result) {
-        this.collection = [...this.collection, {
+        this.posibilities = [...this.posibilities, {
             test,
             result
         }]
     }
     create(IBaseOnLambdaArgs) {
-        const element = this.collection
+        const element = this.posibilities
             .find(({test}) => test(IBaseOnLambdaArgs))
 
         return element ? element.result : this.defaultClass
