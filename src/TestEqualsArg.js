@@ -1,4 +1,4 @@
-class FindEquals {
+class TestEqualsArg {
     constructor(value) {
         this.value = value
     }
@@ -7,4 +7,4 @@ class FindEquals {
     }
 }
 
-module.exports = FindEquals
+module.exports = TestEqualsArg

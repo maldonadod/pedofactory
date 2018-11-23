@@ -3,7 +3,9 @@ const DefaultTerminator = require('../src/DefaultTerminator')
 const FactoryBaseOnLambda = require('../src/FactoryBaseOnLambda')
 const T1000 = require('../src/T1000')
 const T2000 = require('../src/T2000')
-const Find = require('../src/FinderArgs')
+const JohnConnor = require('../src/JohnConnor')
+const TestEqualsArg = require('../src/TestEqualsArg')
+const TestNameArg = require('../src/TestNameArg')
 
 describe('FactoryBaseOnLambda', () => {
     
@@ -12,7 +14,7 @@ describe('FactoryBaseOnLambda', () => {
 
     it('return default result', () => {
         AssertEquals(
-            factory.create(new Find(1)), DefaultTerminator
+            factory.create(new TestEqualsArg(1)), DefaultTerminator
         )
     })
 
@@ -28,12 +30,26 @@ describe('FactoryBaseOnLambda', () => {
             
         it('return T1000 result', () => {
             AssertEquals(
-                factory.create(new Find(1)), T1000
+                factory.create(new TestEqualsArg(1)), T1000
             )
         })
         it('return T2000 (liquido) result', () => {
             AssertEquals(
-                factory.create(new Find(2)), T2000
+                factory.create(new TestEqualsArg(2)), T2000
+            )
+        })
+        it('return John Connor result', () => {
+            const JohnConnorTester = IBaseOnLambdaArgs => {
+                return IBaseOnLambdaArgs.test("John Connor")
+            }
+            factory.map(JohnConnorTester, JohnConnor)
+
+            const params = {
+                name: "John Connor"
+            }
+
+            AssertEquals(
+                factory.create(new TestNameArg(params)), JohnConnor
             )
         })
     })
